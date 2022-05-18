@@ -30,6 +30,19 @@
         </div>
       </div>
   </div>
+  <div>
+    
+  </div>
+  {% for post in post %}
+  <div class="container postt">
+    <h2 class="card-subtitle mb-2 text-muted"><a href="{{url_for('health.post',post_id = post.id)}}" >{{ post.title}}</a></h2>
+    <p>{{ post.content|safe }}</p>
+    <p><b>{{ post.author }}</b></p>
+    <p class="panel-text"><strong>Created on: <span class="badge rounded-pill bg-warning text-dark">
+      {{ post.date_created.strftime("%m/%d/%Y")}}</span></strong> </p>
+      <a href="{{ url_for('health.comments', post_id = post.id)}}">comment</a>
+  </div>
+  {% endfor %}
 
 
 

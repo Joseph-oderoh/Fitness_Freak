@@ -1,0 +1,32 @@
+{% extends 'base.html'%}
+{% block content %}
+<div class="container" id ="blogt">
+
+
+<div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-6 ">
+      <div class="panel panel-default text-center ">
+        <div class="panel-heading">
+          
+          <h4 span style="font-weight: 900;"> <a href="{{url_for('main.post',post_id = post.id)}}" ></a>{{ post.title}}</h4>
+          <p><b>{{ post.author }}</b></p>
+        </div>
+        <div class="panel-body" >
+          <p>{{ post.content }}</p>
+          
+
+          <p><strong>Created on: <span class="badge rounded-pill bg-warning text-dark">{{
+                      post.date_created.strftime("%m/%d/%Y")}}</span></strong> <br>
+                      <button class="btn btn-success"><a class="text" href="{{ url_for('main.comments', post_id = post.id)}}">comment</a></button>
+                      <button class="btn btn-success"><a href="{{ url_for('main.update_post', post_id = post.id)}}">Edit</a></button>
+                        <button class="btn btn-success"><a href="{{ url_for('main.delete_post', post_id = post.id)}}">Delete post</a></button>
+
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock%}
