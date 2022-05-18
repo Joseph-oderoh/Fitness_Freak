@@ -2,7 +2,7 @@ class Config:
     '''
     General configuration parent class
     '''
-    # SQLALCHEMY_DATABASE_URI
+    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://kiarie:rayray@localhost/fitness'
 
 
 
@@ -13,7 +13,7 @@ class ProdConfig(Config):
     Args:
         Config: The parent configuration class with General configuration settings
     '''
-    # SQLALCHEMY_DATABASE_URI
+    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://kiarie:rayray@localhost/fitness'
 
 
 class DevConfig(Config):
