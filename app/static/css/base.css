@@ -1,0 +1,68 @@
+.header{
+    font-size: 20px;
+    font-family: poppins;
+}
+
+body{
+    background-color: white;
+}
+
+.heading1{
+    font-family: Beau+Rivage;
+    font-size: 18px;
+    padding: 50px;
+}
+
+.vitamins{
+    background-color: #EFB9B9;
+    height: 20%;
+    padding: 5px;
+    border-radius: 8px;
+    font-size: 9px;
+    
+}
+h6{
+    color: rgb(70, 70, 235);
+}
+.proteins{
+    background-color: #EFB9B9;
+    height: 20%;
+    padding: 5px;
+    border-radius: 8px;
+    font-size: 9px;
+   
+}
+
+.carbohydrates{
+    background-color: #EFB9B9;
+    height: 20%;
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 9px;
+    margin-left: auto;
+   
+}
+
+.water{
+    background-color: #EFB9B9;
+    height: 20%;
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 9px;
+   
+}
+
+nav{
+    background-color: #EFB9B9;
+}
+.cont1{
+    margin-bottom: 50px;
+}
+.postt{
+    background-color: #EFB9B9;
+    border-radius: 45px;
+    margin-top: 50px;
+    padding: 20px;
+    font-weight: 700;
+    
+}
