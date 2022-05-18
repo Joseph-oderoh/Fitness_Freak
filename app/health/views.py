@@ -37,8 +37,8 @@ def post(post_id):
 #@login_required
 def update_post(post_id):
     post=Post.query.filter_by(id=post_id).first()
-    if post.user != current_user:
-        abort(403)
+    # if post.user != current_user:
+    #     abort(403)
 
     form=FormPost()
     if form.validate_on_submit():
@@ -57,8 +57,8 @@ def update_post(post_id):
 #@login_required
 def delete_post(post_id):
     post=Post.query.filter_by(id=post_id).first()
-    if post.user != current_user:
-        abort(403)
+    # if post.user != current_user:
+        # abort(403)
     db.session.delete(post)
     db.session.commit()
     flash('Your post has been deleted successfully!','success')
@@ -76,7 +76,7 @@ def comments(post_id):
             comment = Comment(
             content=form.content.data,
             post_id=post_id,
-            user_id=current_user.id
+            # user_id=current_user.id
         )
             db.session.add(comment)
             db.session.commit()
