@@ -1,0 +1,79 @@
+
+  
+{% extends 'base.html'%} 
+{% block content%}
+<h1 class="header text-center">Nutrition</h1>
+
+<div class="card container ">
+    <div class="card-body">
+      <p class="card-title heading1">
+        “Nutrition is the process of consuming absorbing and using nutrients needed by the body for growth, development and maintenance of life. To receive adequate, appropriate nutrition, people need to consume a healthy diet which consists of a variety of nutrients-the substances in food that nourish the body.”</p>
+    </div>
+
+
+
+    <div class="container cont1">
+        <div class="row">
+         
+          <div class="col-md-5 vitamins">
+             <h1 class="header text-center">Vitamins</h1>
+
+             <p> Consuming vitamins help you resist infections as well as keep your nerves healthy. Some vitamins may help your body get energy from food or even help your blood clot properly.</p>
+          </div>
+          <div class="col-md-1"> </div>
+          <div class="col-md-6 proteins">
+            
+            <h1 class="header text-center">Proteins</h1>
+            <p>
+                Proteins rebuild your muscle tissues after exercise and also plays a minor role in producing energy under more extreme training conditions. The complete proteins we consume (e.g. meats, fish, dairy, eggs, etc.) are made up of the same amino acids that make up our muscles.
+            </p>
+            
+          </div>
+          
+          
+          <div class="col-md-5 carbohydrates">
+              <h1 class="header text center">Carbohydrates</h1>
+              <p>Consuming dietary carbohydrate soon after exercise results in faster rates of glycogen re-synthesis and provides the body with enough glucose to initiate the recovery process.</p>
+
+          </div>
+          <div class="col-md-1"></div>
+          <div class="col-md-6 water">
+            <h1 class="header text center">Water</h1>
+            <p>Water regulates your body temperature and lubricates your joints. It helps transport nutrients to give you energy and keep you healthy. If you're not hydrated, your body can't perform at its highest level and you may feel tired.</p>
+
+          </div>
+        </div>
+      </div>
+  </div>
+  <h1 class="header text-center">Contact a Nutritionist</h1>
+  <div class="card container">
+      <div class="card body">
+            <h5>Charity Nyange</h5>
+            <h6>PO Box 80072-80100, Mombasa</h6>
+            <h6>Tel: 0202101206</h6>
+            <h6>Email: info@.ackpwaniccs.or.ke</h6>
+         
+
+          </div>
+
+      </div>
+
+  </div> 
+    
+  
+  {% for post in post %}
+  <div class="container postt">
+    <h2 class="card-subtitle mb-2 text-muted"><a href="{{url_for('nutrition.post',post_id = post.id)}}" >{{ post.title}}</a></h2>
+    <p>{{ post.content|safe }}</p>
+    <p><b>{{ post.author }}</b></p>
+    <p class="panel-text"><strong>Created on: <span class="badge rounded-pill bg-warning text-dark">
+      {{ post.date_created.strftime("%m/%d/%Y")}}</span></strong> </p>
+      <a href="{{ url_for('nutrition.comments', post_id = post.id)}}">comment</a>
+  </div>
+  {% endfor %}
+
+
+
+
+
+{% endblock%}
