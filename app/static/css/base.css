@@ -1,0 +1,32 @@
+.header{
+    font-weight: 800;
+    font-family: poppins;
+}
+body{
+    background-color: white;
+}
+
+.hed1{
+    font-family: Beau+Rivage;
+    font-weight: 800;
+    font-size: 3em;
+    margin: 30px auto;
+    padding: 50px;
+}
+.mind{
+    background-color: #EFB9B9;
+    height: 63vh;
+    border: 2px solid black;
+    padding: 20px;
+    
+}
+.diet{
+    background-color: #EFB9B9;
+    height: 60vh;
+    border: 2px solid black;
+    padding: 20px;
+   
+}
+.cont1{
+    margin-bottom: 50px;
+}
