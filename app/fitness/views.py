@@ -4,12 +4,14 @@ from .. models import User, Comment, Post
 from .forms import PostForm, CommentForm
 from flask_login import login_required, current_user
 from flask import  render_template,redirect, request,url_for,abort,flash
+
 @fitness.route('/')
 def index():
     title = 'Fitness'
     post = Post.query.order_by(Post.date_created).all()
     return render_template('index.html', post = post, title=title)
 @fitness.route('/create_new', methods = ['POST','GET'])
+
 # @login_required
 def new_post():
     form = PostForm()
@@ -19,7 +21,7 @@ def new_post():
         # user_id = current_user
         new_post_object = Post(title = title,content = content)
         # user_id=current_user._get_current_object().id
-        new_post_object.save_pitch()
+        new_post_object.save_post()
         return redirect(url_for('fitness.index'))
     return render_template('add_post.html', form = form)
 
@@ -73,7 +75,7 @@ def comments(post_id):
             comment = Comment(
             content=form.content.data,
             post_id=post_id,
-            # user_id=current_user.id
+            user_id=current_user.id
         )
             db.session.add(comment)
             db.session.commit()
