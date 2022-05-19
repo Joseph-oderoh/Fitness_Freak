@@ -21,7 +21,7 @@ def new_post():
         title = form.title.data
         content = form.content.data
         new_post= Post(title=title, content=content) #user_id = currrent_user
-        new_post.save_blog()
+        new_post.save_post()
         flash('Your post has been Created','Success')
         return redirect(url_for('health.index'))
     return render_template('post.html', title='New Post',form = form)
