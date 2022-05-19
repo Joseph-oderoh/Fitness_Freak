@@ -1,27 +1,33 @@
-<nav class="mb-1 navbar navbar-expand-lg navbar-dark ">
-  <a class="navbar-brand" href="{{url_for('main.index')}}"><strong>Ftiness Freak</strong> </a>
+<!-- <nav class="navbar navbar-light bg-light">
+  <div class="container">
+    <ul class="nav navbar-nav navbar-right">
+      <li class="nav-item">
+        <li><a href="/create_new" class="tag">Add Post</a>&nbsp;</li>
+      </li>
+      <li class="nav-item">
+      <li><a class="navbar-brand" href="/"> Home</a></li>
+      </li>
+  </div>
+</nav> -->
+
+
+<nav class="mb-1 navbar navbar-expand-lg navbar-dark " style="background-color: pink;">
+  <a class="navbar-brand" href="{{url_for('fitness.index')}}"><strong>Fitness Freak</strong> </a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-4"aria-controls="navbarSupportedContent-4" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarSupportedContent-4">
           
-      <ul class="navbar-nav ml-auto">
+      <ul class="navbar-nav ml-auto navbar-right">
           
-        
-        <li class="nav-item">
-          <li><a href="/create_new" class="tag">PostHere</a>&nbsp;</li>
-        </li>
-        <li class="nav-item">
-        <li><a class="navbar-brand" href="/"> Home</a></li>
-        </li>
-          <!-- {% else %}
+          
           <li class="nav-item">
-              <a  class="nav-link" href="{{url_for('auth.login')}}" style= 'margin-right:30px'><i class="fas fa-sign-in-alt"></i>&nbsp; <strong>Login</strong></a>
+              <a  class="nav-link" href="/" style= 'margin-right:30px'>&nbsp; <strong>Home</strong></a>
           </li>
           <li class="nav-item">
-                  <a style= 'margin-right:30px' class="nav-link" href="{{url_for('auth.signup')}}"><i class="fas fa-user-plus"></i></i>&nbsp; <strong>Sign Up</strong></a>
+                  <a style= 'margin-right:30px' class="nav-link" href="/create_new"></i>&nbsp; <strong>Add Post</strong></a>
               </li>
-          {%endif%} -->
+          
 
       </ul>
   </div>

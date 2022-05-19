@@ -75,7 +75,7 @@ def comments(post_id):
             comment = Comment(
             content=form.content.data,
             post_id=post_id,
-            user_id=current_user.id
+            # user_id=current_user.id
         )
             db.session.add(comment)
             db.session.commit()
