@@ -22,3 +22,10 @@ def new_post():
         new_post_object.save_pitch()
         return redirect(url_for('fitness.index'))
     return render_template('add_post.html', form = form)
+
+
+@fitness.route('/post/<post_id>', methods=['GET', 'POST'])
+def post(post_id):
+    post=Post.query.filter_by(id=post_id).first()
+    print(post)
+    return render_template('showpost.html',post=post)
