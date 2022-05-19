@@ -5,7 +5,7 @@
 
 {% block content %}
  <body>
-  <div class="jumbotron mt-3">
+  <!-- <div class="jumbotron mt-3"> -->
     <div class="container">
     <h1 class="display-6 text-center">Comments</h1>
    
@@ -17,7 +17,10 @@
         </div>
      
         {% for comment in comment %}
-        <div class="col-md-4">
+        
+      </div>
+      <div class="row">
+        <div class="col-md-8">
           <div class="card bg-white"> 
             <p>Comment:<strong>{{ comment.content }}</strong></p>
               <p>Date Posted :<strong>{{ comment.date_created}}</strong></p>

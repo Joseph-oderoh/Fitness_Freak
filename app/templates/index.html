@@ -31,8 +31,6 @@
         </h5>
     </div>
 
-
-
     <div class="container cont1">
         <div class="row">
          
@@ -76,7 +74,7 @@
     <p><b>{{ post.author }}</b></p>
     <p class="panel-text"><strong>Created on: <span class="badge rounded-pill bg-warning text-dark">
       {{ post.date_created.strftime("%m/%d/%Y")}}</span></strong> </p>
-      <a href="{{ url_for('fitness.comments', post_id = post.id)}}">comment</a>
+      <p><a href="{{ url_for('fitness.comments', post_id = post.id)}}">Comment</a> {{post.comment.count()}} Comments</p>
   </div>
   {% endfor %}
 
