@@ -8,7 +8,7 @@ from .. import db
 def index():
     title = 'Health and Wellness'
     post = Post.query.order_by(Post.date_created).all()
-    return render_template('index.html', title=title, post=post)
+    return render_template('health.html', title=title, post=post)
 
 
 

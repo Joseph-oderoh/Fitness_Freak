@@ -1,15 +1,19 @@
 from . import fitness
+
 from .. import db
 from .. models import User, Comment, Post
 from .forms import PostForm, CommentForm
 from flask_login import login_required, current_user
-from flask import  render_template,redirect, request,url_for,abort,flash
+from flask import  render_template,redirect, request,url_for,abort,flash,Blueprint
 
-@fitness.route('/')
+# ain = Blueprint('fitness', __name__, template_folder='./fitness')
+@fitness.route('/fitness')
 def index():
     title = 'Fitness'
     post = Post.query.order_by(Post.date_created).all()
-    return render_template('index.html', post = post, title=title)
+    return render_template('fitness.html', post = post, title=title)
+
+
 @fitness.route('/create_new', methods = ['POST','GET'])
 
 # @login_required

@@ -6,7 +6,7 @@ from flask_login import login_required,current_user
 from .. import db
 
 
-@nutrition.route('/')
+@nutrition.route('/nutrition')
 def index():
     title = 'Nutrition'
     post = Post.query.order_by(Post.date_created).all()
