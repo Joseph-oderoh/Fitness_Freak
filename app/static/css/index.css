@@ -1,3 +1,9 @@
+#background{
+  background-image: url('../photos/backgroung.jpeg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
 body {
     margin: 0;
     font-family: 'Montserrat', sans-serif;
