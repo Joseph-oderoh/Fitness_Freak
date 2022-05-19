@@ -10,7 +10,7 @@ from .. import db
 def index():
     title = 'Nutrition'
     post = Post.query.order_by(Post.date_created).all()
-    return render_template('index.html', title=title, post=post)
+    return render_template('nutrition.html', title=title, post=post)
 
 
 
