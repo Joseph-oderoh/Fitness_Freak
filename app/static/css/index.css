@@ -61,6 +61,10 @@ body {
     transition: width .5s linear;  
   }
   nav a:hover:after {width: 100%;}
+
+  .navbar-nav>li>.dropdown-menu {
+    z-index: 9999;
+  }
   
   @media screen and (max-width: 660px) {
     header {text-align: center;}
