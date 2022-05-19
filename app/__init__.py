@@ -24,6 +24,8 @@ def create_app(config_name):
 
     # Registering the blueprint
     # register home blueprint
+    from .home import home as home_blueprint
+    app.register_blueprint(home_blueprint)
     
     from .main import main as main_blueprint
     app.register_blueprint(main_blueprint)

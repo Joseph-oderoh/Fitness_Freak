@@ -10,8 +10,7 @@ from flask_login import login_user, logout_user, login_required
 def register():
     form = RegistrationForm()
     if form.validate_on_submit():
-        user = User(firstname=form.firstname.data,
-                    lastname=form.lastname.data,
+        user = User(
                     email=form.email.data,
                     username=form.username.data,
                     password=form.password.data)
@@ -31,7 +30,7 @@ def login():
         user = User.query.filter_by(email = login_form.email.data).first()
         if user is not None and user.verify_password(login_form.password.data):
             login_user(user, login_form.remember.data)
-            return redirect(url_for("home.homepage"))
+            return redirect(url_for("main.index"))
         
         flash("Invalid username or password")
         

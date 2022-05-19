@@ -4,8 +4,6 @@ from wtforms.validators import DataRequired,Email,EqualTo, InputRequired, Email,
 from ..models import User
 
 class RegistrationForm(FlaskForm):
-    firstname = StringField('First Name',validators=[DataRequired()])
-    lastname = StringField('Last Name',validators=[DataRequired()])
     email = StringField('Your Email Address',validators=[DataRequired(),Email()])
     username = StringField('Enter your username',validators = [DataRequired()])
     password = PasswordField('Password',validators = [DataRequired(), EqualTo('password_confirm',message = 'Passwords must match')])
@@ -22,7 +20,7 @@ class RegistrationForm(FlaskForm):
             raise ValidationError('That username is taken')
 
 class LoginForm(FlaskForm):
-    username = StringField("Username", validators=[InputRequired(), Email(), Length(1, 64)])
+    email = StringField("Email", validators=[InputRequired(), Email(), Length(1, 64)])
     password = PasswordField("Password", validators=[InputRequired(), Length(min=4, max=72)])
     remember = BooleanField("Remember Me")
     submit = SubmitField("Login")
