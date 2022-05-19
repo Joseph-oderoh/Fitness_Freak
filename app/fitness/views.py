@@ -87,6 +87,15 @@ def comments(post_id):
             flash('Your comment has been posted successfully.')
     return render_template('comments.html',posts= post, comment=comments, form = form)
 
+@fitness.route('/comment/<int:post_id>', methods = ['POST','GET'])
+@login_required
+def newcomment(post_id):
+    post = Post.query.get(post_id)
+    comment =request.form.get('newcomment')
+    new_comment = Comment(comment = comment, user_id = current_user._get_current_object().id, post_id=post_id)
+    new_comment.save()
+    return redirect(url_for('showpost.html',id = post.id))
+
 @fitness.route('/comment/<comment_id>', methods=['POST','GET'])
 def delete_comment(comment_id):
     comment = Comment.query.filter_by(id = comment_id).first()

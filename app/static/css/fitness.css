@@ -5,20 +5,28 @@ header {
   background-position: center center;
   text-align: right;
   background-repeat: no-repeat;
-  height: 50vh;
+  height: 80vh;
   color: black;
 }
-.header{
+.site-heading {
+  font-family: 'Caveat', cursive; 
+  /* font-weight: 70; */
+  float: left;
+  font-size: 50px;
+  padding-right: 80px;
+  margin-top: 200px;
+
+}
+/* .header{
   font-weight: 800;
   font-family: poppins;
-}
+} */
 body{
   background-color: white;
 }
 
 .hed1{
-  font-family: Beau+Rivage;
-  font-weight: 800;
+  
   font-size: 3em;
   margin: 30px auto;
   padding: 50px;
