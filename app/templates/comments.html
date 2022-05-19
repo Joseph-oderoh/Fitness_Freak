@@ -26,10 +26,12 @@
               
               <a href="{{ url_for('health.delete_comment', comment_id = comment.id)}}">Delete Comment</a>
               <a href="{{ url_for('nutrition.delete_comment', comment_id = comment.id)}}">Delete Comment</a>
+              <a href="{{ url_for('fitness.delete_comment', comment_id = comment.id)}}">Delete Comment</a>
             </div>
           </div>
           {% endfor %}
       </div>
     </div>
   </div>
+</body>
     {% endblock%}

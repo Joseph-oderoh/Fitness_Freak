@@ -29,6 +29,9 @@ def create_app(config_name):
     app.register_blueprint(nutrition_blueprint)
     
 
+
+    from .fitness import fitness as fitness_blueprint
+    app.register_blueprint(fitness_blueprint)
     
 
   
