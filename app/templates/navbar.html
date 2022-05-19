@@ -1,15 +1,26 @@
-<nav class="navbar navbar-light bg-light">
+<header>
   <div class="container">
-    <ul class="nav navbar-nav navbar-right">
-      <li class="nav-item">
-        <li><a href="/createpost" class="tag">PostHere</a>&nbsp;</li>
-        
-      </li>
-      <li class="nav-item">
-      <li><a class="navbar-brand" href="/"> Home</a></li>
-      <li class="nav-item"><a class="nav-link" href="/fitness"></i>&nbsp; <strong>Fitness</strong></a></li>
-      <li class="nav-item"><a  class="nav-link" href="/nutrition"></i>&nbsp; <strong>Nutrition</strong></a></li>
-    
-      </li>
+    <div class="logo-box">
+      <img src="../static/photos/Logo_clear.png">
+    </div>
+    <nav>
+    <ul>
+      <li><a href="{{url_for('auth.logout')}}" style="font-size:20px;">Home</a></li>
+      <li><a href="{{url_for('auth.logout')}}" style="font-size:20px;">Category</a></li>
+      <li><a href="{{url_for('auth.login')}}" style="font-size:20px;">Log in</a></li>
+      <li><a href="{{url_for('auth.logout')}}" style="font-size:20px;">Sign out</a></li>
+   </ul>
+  </nav>
   </div>
-</nav>
+</header>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Category <span class="caret"></span></a>
+  <ul class="dropdown-menu" role="menu">
+    <li><a href="#">Health</a></li>
+    <li><a href="#">Fitness</a></li>
+    <li><a href="#">Nutrition</a></li>
+    <li class="divider"></li>
+    <li class="dropdown-header">Nav header</li>
+    <li><a href="#">Separated link</a></li>
+    <li><a href="#">One more separated link</a></li>
+  </ul>

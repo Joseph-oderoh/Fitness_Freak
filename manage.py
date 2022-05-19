@@ -5,7 +5,6 @@ from  flask_migrate import Migrate, MigrateCommand
 
 from app.models import Post, User
 
-
 # Creating app instance
 app = create_app('development')
 
