@@ -9,3 +9,16 @@ def index():
     title = 'Fitness'
     post = Post.query.order_by(Post.date_created).all()
     return render_template('index.html', post = post, title=title)
+@fitness.route('/create_new', methods = ['POST','GET'])
+# @login_required
+def new_post():
+    form = PostForm()
+    if form.validate_on_submit():
+        title = form.title.data
+        content = form.content.data
+        # user_id = current_user
+        new_post_object = Post(title = title,content = content)
+        # user_id=current_user._get_current_object().id
+        new_post_object.save_pitch()
+        return redirect(url_for('fitness.index'))
+    return render_template('add_post.html', form = form)
