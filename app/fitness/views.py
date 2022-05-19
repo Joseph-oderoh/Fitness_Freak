@@ -30,7 +30,7 @@ def post(post_id):
     print(post)
     return render_template('showpost.html',post=post)
 
-@health.route('/post/<post_id>/update',methods=['GET', 'POST'])
+@fitness.route('/post/<post_id>/update',methods=['GET', 'POST'])
 #@login_required
 def update_post(post_id):
     post=Post.query.filter_by(id=post_id).first()
@@ -48,4 +48,46 @@ def update_post(post_id):
         form.title.data=post.title
         form.content.data=post.content
 
-    return render_template('post.html', form = form,title='Update Post')
+    return render_template('add_post.html', form = form,title='Update Post')
+
+@fitness.route('/post/<post_id>/delete',methods=['GET', 'POST'])
+#@login_required
+def delete_post(post_id):
+    post=Post.query.filter_by(id=post_id).first()
+    # if post.user != current_user:
+        # abort(403)
+    db.session.delete(post)
+    db.session.commit()
+    flash('Your post has been deleted successfully.')
+    return redirect(url_for('fitness.index'))
+
+@fitness.route('/comments/<post_id>', methods=['GET', 'POST'])
+##@login_required
+def comments(post_id):
+    comments = Comment.query.filter_by(post_id=post_id).all()
+    post = Post.query.get(post_id)
+    form = CommentForm()
+    if post is None:
+        abort(404)
+    if form.validate_on_submit():
+            comment = Comment(
+            content=form.content.data,
+            post_id=post_id,
+            # user_id=current_user.id
+        )
+            db.session.add(comment)
+            db.session.commit()
+            form.content.data = ''
+            flash('Your comment has been posted successfully.')
+    return render_template('comments.html',posts= post, comment=comments, form = form)
+
+@fitness.route('/comment/<comment_id>', methods=['POST','GET'])
+def delete_comment(comment_id):
+    comment = Comment.query.filter_by(id = comment_id).first()
+    post_id = comment.post_id
+    db.session.delete(comment)
+    db.session.commit()
+    flash('Your comment has been deleted successfully.')
+    return redirect(url_for('.post',post_id = post_id))
+
+
