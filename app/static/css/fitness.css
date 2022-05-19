@@ -9,11 +9,12 @@ header {
   color: black;
 }
 .site-heading {
-  font-family: 'Hind', sans-serif; 
+  font-family: 'Caveat', cursive; 
   /* font-weight: 70; */
   float: left;
-  font-size: 80px;
+  font-size: 50px;
   padding-right: 80px;
+  margin-top: 200px;
 
 }
 /* .header{

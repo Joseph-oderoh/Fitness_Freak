@@ -22,10 +22,10 @@
       <div class="row">
         <div class="col-md-8">
           <div class="card bg-white"> 
-            <p>Comment:<strong>{{ comment.content }}</strong></p>
-              <p>Date Posted :<strong>{{ comment.date_created}}</strong></p>
+            <p style="margin-left:10px ;">Comment: <br><strong>{{ comment.content }}</strong></p>
+              <p style="margin-left:10px;">Date Posted :<strong>{{ comment.date_created}}</strong></p>
                 
-                <a href="{{ url_for('fitness.delete_comment', comment_id = comment.id)}}">Delete Comment</a>
+                <a href="{{ url_for('fitness.delete_comment', comment_id = comment.id)}}"><i class="fa fa-trash"></i>Delete </a>
               </div>
             </div>
             {% endfor %}
