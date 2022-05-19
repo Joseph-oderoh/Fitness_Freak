@@ -6,7 +6,11 @@ class Config:
    
     
 class ProdConfig(Config):
-   pass   
+    URI= os.getenv('DATABASE_URL')
+    if URI and URI.startswith('postgres://'):
+        URI = URI.replace('postgres://', 'postgresql://', 1)
+        
+    SQLALCHEMY_DATABASE_URI = URI
 
 class DevConfig(Config):
     SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://moringa:health@localhost/health'

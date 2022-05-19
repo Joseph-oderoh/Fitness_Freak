@@ -4,7 +4,7 @@ from .forms import CommentForm,FormPost
 from ..models import Comment,Post,User
 from flask_login import login_required,current_user
 from .. import db
-@health.route('/')
+@health.route('/health')
 def index():
     title = 'Health and Wellness'
     post = Post.query.order_by(Post.date_created).all()
