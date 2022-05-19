@@ -25,7 +25,7 @@ class User(UserMixin ,db.Model):
         db.session.commit()
     @property
     def password(self):
-        raise AttributeError('You cannnot read the password attribute')
+        raise AttributeError('You cannot read the password attribute')
 
     @password.setter
     def password(self, password):
@@ -63,4 +63,4 @@ class Comment(db.Model):
         db.session.add(self)
         db.session.commit()
     def __repr__(self):
-        return f'Comment {self.name}'         
+        return f'Comment {self.name}'    
