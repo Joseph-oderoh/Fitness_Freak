@@ -29,3 +29,23 @@ def post(post_id):
     post=Post.query.filter_by(id=post_id).first()
     print(post)
     return render_template('showpost.html',post=post)
+
+@health.route('/post/<post_id>/update',methods=['GET', 'POST'])
+#@login_required
+def update_post(post_id):
+    post=Post.query.filter_by(id=post_id).first()
+    # if post.user != current_user:
+    #     abort(403)
+
+    form=PostForm()
+    if form.validate_on_submit():
+        post.title=form.title.data
+        post.content=form.content.data
+        db.session.commit()
+        flash('You have updated your post.')
+        return redirect(url_for('.post',post_id=post.id) )
+    elif request.method=='GET':
+        form.title.data=post.title
+        form.content.data=post.content
+
+    return render_template('post.html', form = form,title='Update Post')
