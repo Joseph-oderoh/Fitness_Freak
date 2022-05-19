@@ -25,6 +25,10 @@ def create_app(config_name):
     app.register_blueprint(health_blueprint)
   
     
+    from .nutrition import nutrition as nutrition_blueprint
+    app.register_blueprint(nutrition_blueprint)
+    
+
     
 
   

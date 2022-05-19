@@ -41,25 +41,12 @@
         </div>
       </div>
   </div>
-  <h1 class="header text-center">Contact a Nutritionist</h1>
-  <div class="card container">
-      <div class="card body">
-            <h5>Charity Nyange</h5>
-            <h6>PO Box 80072-80100, Mombasa</h6>
-            <h6>Tel: 0202101206</h6>
-            <h6>Email: info@.ackpwaniccs.or.ke</h6>
-         
-
-          </div>
-
-      </div>
-
-  </div> 
+  <div>
     
-  
+  </div>
   {% for post in post %}
   <div class="container postt">
-    <h2 class="card-subtitle mb-2 text-muted"><a href="{{url_for('nutrition.post',post_id = post.id)}}" >{{ post.title}}</a></h2>
+    <h2 class="card-subtitle mb-2 text-muted"><a href="{{url_for('health.post',post_id = post.id)}}" >{{ post.title}}</a></h2>
     <p>{{ post.content|safe }}</p>
     <p><b>{{ post.author }}</b></p>
     <p class="panel-text"><strong>Created on: <span class="badge rounded-pill bg-warning text-dark">
@@ -69,12 +56,6 @@
   {% endfor %}
 
   {% endblock%}
-      <a href="{{ url_for('nutrition.comments', post_id = post.id)}}">comment</a>
-  </div>
-  {% endfor %}
-
-
-
 
 
 {% endblock%}
