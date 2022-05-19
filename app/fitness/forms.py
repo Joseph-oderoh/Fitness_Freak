@@ -7,7 +7,7 @@ class CommentForm(FlaskForm):
   content = TextAreaField('Leave a Comment.',validators=[InputRequired()])
   submit = SubmitField ('Submit')
 
-class FormPost(FlaskForm):
+class PostForm(FlaskForm):
   title = StringField('Title', validators=[InputRequired()])
   content = TextAreaField('Post', validators=[InputRequired()])
   category = RadioField('Category :', choices = [('Fitness', 'Fitness')], validators = [InputRequired()])
