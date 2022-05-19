@@ -1,2 +1,73 @@
-{% extends 'base.html'%}
-{% block content %}
+{% extends 'base.html'%} 
+{% block body %}  
+  {% block navbar %}
+  {% include 'navbar.html' %}
+  {% endblock %}
+{% block styles %} {{super()}}
+<link
+  href="{{url_for('static',filename='css/fitness.css')}}"
+  rel="stylesheet"
+/>
+{% endblock %}
+{% block content%}
+<h1 class="header text-center">Fitness</h1>
+
+<div class="card container ">
+    <div class="card-body">
+      <h5 class="card-title hed1">
+        "When it comes to eating right and exercising, there is no 'I'll start tomorrow"</h5>
+    </div>
+
+
+
+    <div class="container cont1">
+        <div class="row">
+         
+          <div class="col-md-5 mind">
+             <h1 class="header text-center">Cardiovascular Endurance</h1>
+
+             <p>This is the ability of the heart and lungs to work together to provide the needed oxygen and fuel to the body during sustained workloads. Examples would be jogging, cycling and swimming. The Cooper Run is used most often to test cardiovascular endurance.</p>
+          </div>
+          <div class="col-md-1"> </div>
+          <div class="col-md-6 diet">
+            <h1 class="header text-center">Muscular endurance</h1>
+            <p>
+              This is the ability of the muscles to perform continuous without fatiguing. Examples would be cycling, step machines and elliptical machines. The sit up test is most often used to test muscular endurance
+            </p>
+          </div>
+        </div>
+        <div class="row">
+         
+          <div class="col-md-5 mind">
+             <h1 class="header text-center">Body Composition</h1>
+
+             <p>This is the amount of fat mass compared to lean muscle mass, bone and organs. This can be measured using underwater weighing, Skinfold readings, and bioelectrical impedance. Underwater weighing is considered the “gold standard” for body fat measurement, however because of the size and expense of the equipment needed very few places are set up to do this kind of measurement.</p>
+          </div>
+          <div class="col-md-1"> </div>
+          <div class="col-md-6 diet">
+            <h1 class="header text-center">Flexibility</h1>
+            <p>
+              This is the ability of each joint to move through the available range of motion for a specific joint. Examples would be stretching individual muscles or the ability to perform certain functional movements such as the lunge. The sit and reach test is most often used to test flexibility.
+            </p>
+          </div>
+        </div>
+      </div>
+  </div>
+  <div>
+    
+  </div>
+  {% for post in post %}
+  <div class="container postt">
+    <h2 class="card-subtitle mb-2 text-muted"><a href="{{url_for('fitness.post',post_id = post.id)}}" >{{ post.title}}</a></h2>
+    <p>{{ post.content|safe }}</p>
+    <p><b>{{ post.author }}</b></p>
+    <p class="panel-text"><strong>Created on: <span class="badge rounded-pill bg-warning text-dark">
+      {{ post.date_created.strftime("%m/%d/%Y")}}</span></strong> </p>
+      <a href="{{ url_for('fitness.comments', post_id = post.id)}}">comment</a>
+  </div>
+  {% endfor %}
+
+  {% endblock%}
+
+
+{% endblock%}
