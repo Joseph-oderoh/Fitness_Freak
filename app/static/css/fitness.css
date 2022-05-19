@@ -5,8 +5,16 @@ header {
   background-position: center center;
   text-align: right;
   background-repeat: no-repeat;
-  height: 50vh;
+  height: 40vh;
   color: black;
+}
+.site-heading {
+  font-family: 'Hind', sans-serif; 
+  font-weight: 800;
+  float: left;
+  font-size: 80px;
+  padding-right: 80px;
+
 }
 .header{
   font-weight: 800;
@@ -17,8 +25,7 @@ body{
 }
 
 .hed1{
-  font-family: Beau+Rivage;
-  font-weight: 800;
+  
   font-size: 3em;
   margin: 30px auto;
   padding: 50px;
