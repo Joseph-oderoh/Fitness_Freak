@@ -13,8 +13,8 @@ class ProdConfig(Config):
     SQLALCHEMY_DATABASE_URI = URI
 
 class DevConfig(Config):
-    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://moringa:health@localhost/health'
-
+    # SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://moringa:health@localhost/health'
+    pass
 
     
 
